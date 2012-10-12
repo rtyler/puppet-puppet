@@ -29,13 +29,14 @@
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# R. Tyler Croy <tyler@linux.com>
 #
 # === Copyright
 #
-# Copyright 2011 Your name here, unless otherwise noted.
-#
+# Copyright 2012 R. Tyler Croy
+
 class puppet {
-
-
+  if ($osfamily == 'debian') {
+    include puppet::debian
+  }
 }
