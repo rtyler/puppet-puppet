@@ -6,7 +6,8 @@ describe 'puppet' do
   context 'on debian systems' do
     let(:facts) do
       {
-        :osfamily => 'debian'
+        :osfamily => 'debian',
+        :lsbdistcodename => 'lucid'
       }
     end
 
