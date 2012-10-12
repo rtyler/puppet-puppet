@@ -36,6 +36,8 @@
 # Copyright 2012 R. Tyler Croy
 
 class puppet {
+  include stdlib
+
   if ($osfamily == 'debian') {
     include puppet::debian
   }
