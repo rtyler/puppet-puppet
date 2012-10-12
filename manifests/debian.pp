@@ -1,4 +1,4 @@
-class puppet::debian {
+class puppet::debian($ensure = 'installed') {
   include apt
 
   apt::source { 'puppetlabs':
@@ -6,5 +6,11 @@ class puppet::debian {
     repos      => 'main',
     key        => '4BD6EC30',
     key_server => 'pgp.mit.edu',
+  }
+
+  package {
+    'puppet' :
+      ensure  => $ensure,
+      require => Apt::Source[puppetlabs];
   }
 }
