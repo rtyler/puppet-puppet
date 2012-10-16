@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 describe 'puppet' do
-  it { should include_class 'stdlib' }
   let(:params) do
     {
       :ensure => 'installed'
