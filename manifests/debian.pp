@@ -11,6 +11,12 @@ class puppet::debian($ensure = 'installed') {
   package {
     'puppet' :
       ensure  => $ensure,
+      require => [
+                  Package['puppet-common'],
+                  Apt::Source[puppetlabs]];
+
+    'puppet-common' :
+      ensure => $ensure,
       require => Apt::Source[puppetlabs];
   }
 }
