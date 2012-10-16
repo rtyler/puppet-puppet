@@ -1,8 +1,14 @@
 source :gemcutter
 
 gem 'rake'
-gem 'rspec-puppet'
-gem 'puppet-lint'
 gem 'puppet', '~> 2.7.0'
 gem 'puppet-module'
-gem 'puppetlabs_spec_helper'
+
+group :test do
+  gem 'rspec-puppet'
+  gem 'puppet-lint'
+  gem 'blimpy'
+  gem 'blimpy-cucumber'
+  gem 'cucumber'
+  gem 'puppetlabs_spec_helper'
+end
